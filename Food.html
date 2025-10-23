@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상단 바 고정 + 중앙 세로형 이미지·텍스트</title>
+  <style>
+    /* 기본 설정 */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fafafa;
+    }
+
+    /* 상단 바 */
+    .topbar {
+      width: 100%;
+      height: 100px;
+      background-color: #ff2020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      position: fixed; /* ✅ 브라우저 맨 위 고정 */
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .topbar span {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .topbar span:hover {
+      color: #14812d;
+    }
+
+    /* 중앙 컨테이너 */
+    .container {
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+      margin: 140px auto 40px; /* ✅ 상단 바 높이만큼 여백 확보 */
+    }
+
+    .item {
+      margin-bottom: 80px;
+    }
+
+    .item img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .item h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .item p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 바 -->
+  <div class="topbar">
+   
+   
+        <span onclick="location.href='index.html'" style="cursor:pointer;">
+      <img src="국기.png" alt="국기" style="width:50px; height:50px; vertical-align:middle; border-radius:50%;">
+    </span>
+    <span onclick="location.href='history.html'">History</span>
+    <span onclick="location.href='Artifacts.html'">Artifacts</span>
+    <span onclick="location.href='opera.html'">Opera</span>
+    <span onclick="location.href='Tourist.html'">Tourist attraction</span>
+    <span onclick="location.href='food.html'">Food</span>
+    
+
+ 
+  </div>
+  </div>
+
+  <!-- 중앙 세로형 이미지·텍스트 -->
+  <div class="container">
+    <div class="item">
+      <img src="파스타.jpg" alt="파스타">
+      <h2>파스타 (Pasta)</h2>
+      <p>파스타는 밀가루(주로 듀럼밀 세몰리나)와 물, 달걀을 반죽하여 만든 이탈리아의 대표적인 면 요리입니다.</p>
+    </div>
+
+    <div class="item">
+      <img src="피자.jpg" alt="피자">
+      <h2>피자 (Pizza)</h2>
+      <p>얇은 도우 위에 토마토소스, 치즈, 다양한 재료를 얹어 구운 이탈리아 전통 음식입니다.</p>
+    </div>
+
+    <div class="item">
+      <img src="리조토.jpg" alt="리조또">
+      <h2>리조또 (Risotto)</h2>
+      <p>이탈리아 북부에서 유래한 쌀요리로, 육수에 천천히 익혀 부드럽고 진한 풍미를 냅니다.</p>
+    </div>
+      <div class="item">
+      <img src="젤라토.jpg" alt="티라미수">
+      <h2>젤라토 (gelato)</h2>
+      <p> 신선한 재료로 만든 이탈리아 전통 아이스크림으로, 이탈리아 여행 시 꼭 맛봐야 할 디저트입니다.</p>
+    </div>
+    <div class="item">
+      <img src="티라미수.jpg" alt="티라미수">
+      <h2>티라미수 (Tiramisu)</h2>
+      <p>마스카포네 치즈, 에스프레소, 카카오가 어우러진 이탈리아의 대표 디저트입니다.</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

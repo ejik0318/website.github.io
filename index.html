@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>스크롤 가능한 GIF 페이지</title>
+    <style>
+        /* 기본 설정 */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            /* 가로 스크롤 방지 */
+        }
+
+        /* 전체 페이지 */
+        .page {
+            width: 1920px;
+            min-height: 3000px;
+            /* 페이지 높이 3000px */
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 상단 바 */
+        .topbar {
+            width: 100%;
+            height: 100px;
+            background-color: #ff2020;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            position: sticky;
+            /* 스크롤 시 상단 고정 */
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar span {
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .topbar span:hover {
+            color: #14812d;
+        }
+
+       
+
+        /* 추가 콘텐츠 섹션 */
+        .extra-section {
+            width: 1920px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: #444;
+            height: 1900px;
+            /* 나머지 공간 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- 상단 바 -->
+  <div class="topbar">
+
+    
+    <span onclick="location.href='history.html'">History</span>
+    <span onclick="location.href='artifacts.html'">Artifacts</span>
+    <span onclick="location.href='opera.html'">Opera</span>
+    <span onclick="location.href='tourist.html'">Tourist attraction</span>
+    <span onclick="location.href='Food.html'">Food</span>
+
+    
+  </div>
+
+       <!-- IMG 섹션 -->
+<div class="IMG-section">
+    <img src="콜로세움.jpg" alt="메인 IMG">
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+        <style>
+            .IMG-section {
+                position: relative; /* 자식 버튼 절대 위치 기준 */
+                width: 100%;
+                max-width: 1920px;
+            }
+
+            .IMG-section img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 10px;
+            }
+
+            /* 버튼 스타일 */
+            .img-button {
+                position: absolute;
+                bottom: 30px;   /* 이미지 하단에서 위로 30px */
+                right: 30px;    /* 이미지 오른쪽에서 안쪽으로 30px */
+                padding: 12px 25px;
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                background: linear-gradient(45deg, #ff4d4d, #56f26e);
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                transition: all 0.3s ease;
+            }
+
+
+            /* 마우스 오버 시 */
+            .img-button:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            }
+        </style>
+        <div class="IMG-section">
+  
+
+  <!-- 버튼 클릭 시 다른 페이지로 이동 -->
+  <a href="video.html">
+    <button class="img-button">Learn more</button>
+  </a>
+</div>
+
+
+
+
+
+
+        <!-- 표 추가 섹션 -->
+        <div class="table-section">
+
+
+
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                이탈리아에서 진행되는 다양한 이벤트!</h2>
+<h1 style="color: #214eff;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Italy upcoming!
+</h1>
+
+
+
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <th>11/1</th>
+                    <th>11/2</th>
+                    <th>11/3</th>
+                    <th>11/4</th>
+                    <th>11/5</th>
+                    <th>11/6</th>
+                    <th>11/7</th>
+                    <th>11/8</th>
+                    <th>11/9</th>
+                    <th>11/10</th>
+                    <th>11/11</th>
+                    <th>11/12</th>
+                    <th>11/13</th>
+                    <th>11/14</th>
+                    <th>11/15</th>
+                </tr>
+                <tr>
+                    <td>SAT</td>
+                    <td>SUN</td>
+                    <td>MON</td>
+                    <td>TUE</td>
+                    <td>WED</td>
+                    <td>THU</td>
+                    <td>SAT</td>
+                    <td>SUN</td>
+                    <td>MON</td>
+                    <td>TUE</td>
+                    <td>WED</td>
+                    <td>THU</td>
+                    <td>SAT</td>
+                    <td>SUN</td>
+                    <td>SAT</td>
+                </tr>
+
+
+            </table>
+        </div>
+
+<div class="image-row">
+  <img src="포스터1.png" alt="이미지1">
+  <img src="포스터2.png" alt="이미지2">
+  <img src="포스터3.jpg" alt="이미지3">
+  <img src="포스터4.jpg" alt="이미지4">
+  <img src="포스터5.jpg" alt="이미지5">
+</div>
+
+<style>
+.image-row {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  gap: 15px;               /* 이미지 간격 */
+  margin-top: 30px;        /* 위쪽 여백 */
+}
+
+.image-row img {
+  width: 268px;             /* 이미지 너비 */
+  height: auto;             /* 비율 유지 */
+  border-radius: 10px;      /* 둥근 모서리 */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* 기본 그림자 */
+  transition: all 0.3s ease; /* 부드러운 애니메이션 */
+  cursor: pointer;           /* 마우스 포인터 변경 */
+}
+
+/* 마우스 오버 효과 */
+.image-row img:hover {
+  transform: scale(1.05); /* 5% 확대 */
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); /* 그림자 강조 */
+}
+</style>
+
+
+<h1 style="color: #000000; margin-top: 300px; text-align: center;">
+    필수 명소 <span style="color: #0b30ea;">3곳</span>을 만나보세요!
+</h1>
+
+
+<div class="image-row">
+  <div class="image-item">
+    <img src="콜로세움2.jpg" alt="콜로세움">
+    <p><h2>콜로세움</h2></p>
+
+
+  <p> <h3>📍located in Rome, Italy</h3> </p>
+
+
+
+   <p>콜로세움은 로마의 역사와 건축 기술을 보여주는 </p>
+<p> 상징적인 원형 경기장입니다.</p>
+
+   
+  </div>
+  <div class="image-item">
+    <img src="밀라노.jpg" alt="밀라노">
+    <p><h2>밀라노 대성당</h2></p>
+
+     <p><h3> 📍located in Rome, milan</h3> </p>
+
+<p>밀라노 대성당은 화려한 고딕 양식으로 지어진</p>
+<p>이탈리아 밀라노의 대표적인 성당입니다.</p>
+
+
+  </div>
+  <div class="image-item">
+    <img src="베네치아.webp" alt="베네치아">
+    <p><h2>베네치아</h2></p>
+        <p> <h3>📍located in Rome, Venice</h3></p>
+
+
+        <p>베네치아는 운하와 곤돌라로 유명한 </p>
+
+        <p>이탈리아의 물의 도시입니다.</p>
+  </div>
+</div>
+
+<style>
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;       /* 이미지 간격 */
+  margin-top: 20px;
+}
+
+.image-item {
+  text-align: center;  /* 이미지 아래 설명 중앙 정렬 */
+}
+
+.image-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.image-item p {
+  margin-top: 10px;    /* 이미지와 텍스트 사이 간격 */
+  font-size: 18px;     /* 글자 크기 */
+  color: #333;         /* 글자 색상 */
+}
+</style>
+
+
+
+</style>
+
+
+<h1 style="color: #000000; margin-top: 100px; text-align: center;">
+  여행자 후기
+</h1>
+
+<div class="image-row">
+  <img src="후기1.png" alt="이미지1">
+  <img src="후기2.png" alt="이미지2">
+ <img src="후기3.png" alt="이미지3">
+ <img src="후기4.png" alt="이미지4">
+</div>
+
+
+<style>
+/* 이미지와 textarea 사이 간격 */
+.image-row {
+  display: flex;
+  gap: 15px; /* 이미지 간격 */
+  margin-top: 20px; /* 이미지 위쪽 여백 */
+  justify-content: center;
+}
+
+/* textarea 폼 간격 */
+form {
+  margin-top: 40px; /* 이미지와 textarea 사이 간격 */
+}
+</style>
+
+<form>
+    다양한 후기를 작성해보세요.<br>
+    <textarea id="review" rows="7" cols="60"></textarea>
+</form>
+
+<form>
+    <button type='button' onclick="document.getElementById('review').value=''">확인</button>
+</form>
+
+<div class="privacy-option">
+    <label>
+        <input type="radio" name="hobby" checked>
+        공개
+    </label>
+    <label>
+        <input type="radio" name="hobby">
+        비공개
+    </label>
+</div>
+
+<style>
+.privacy-option {
+    display: flex;      /* 한 줄로 나란히 정렬 */
+    gap: 20px;          /* 버튼 간 간격 */
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.privacy-option input[type="radio"] {
+    margin-right: 5px;  /* 버튼과 텍스트 사이 간격 */
+    cursor: pointer;
+}
+</style>
+
+
+
+    <!-- 나머지 콘텐츠 -->
+        <div class="extra-section">
+            
+        </div>
+    </div>
+</body>
+
+</html>

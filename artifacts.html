@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상단 바 고정 + 중앙 세로형 이미지·텍스트</title>
+  
+
+
+
+
+
+
+<body>
+
+  <!-- 상단 바 -->
+  <div class="topbar">
+    <span>History</span>
+    <span>Artifacts</span>
+    <span>Opera</span>
+    <span>Tourist attraction</span>
+    <span>Food</span>
+  </div>
+
+
+
+
+  <title>클릭 시 블러 + 텍스트 오버레이</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fafafa;
+  }
+
+  /* 상단 바 */
+  .topbar {
+    width: 100%;
+    height: 100px;
+    background-color: #ff2020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  .topbar span {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .topbar span:hover {
+    color: #14812d;
+  }
+
+  /* 이미지 컨테이너 */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 160px auto 40px; /* 상단바 아래 간격 확보 */
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px; /* 이미지 간격 */
+  }
+
+  .image-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .image-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  /* 클릭 시 블러 처리 */
+  .selected img {
+    filter: blur(5px);
+    transform: scale(1.05);
+  }
+
+  /* 텍스트 오버레이 */
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px; /* 적당한 글씨 크기 */
+    text-align: center;
+    opacity: 0;
+    padding: 8px 15px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    max-width: 80%;
+  }
+
+  /* 클릭 시 텍스트 보이기 */
+  .selected .overlay-text {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+  <!-- 상단 바 -->
+  <div class="topbar">
+    <span>History</span>
+    <span>Artifacts</span>
+    <span>Opera</span>
+    <span>Tourist attraction</span>
+    <span>Food</span>
+  </div>
+
+      <div class="page">
+        <!-- 상단 바 -->
+  <div class="topbar">
+
+           <span onclick="location.href='index.html'" style="cursor:pointer;">
+      <img src="국기.png" alt="국기" style="width:50px; height:50px; vertical-align:middle; border-radius:50%;">
+    </span>
+    <span onclick="location.href='history.html'">History</span>
+    <span onclick="location.href='food.html'">Artifacts</span>
+    <span onclick="location.href='opera.html'">Opera</span>
+    <span onclick="location.href='Tourist.html'">Tourist attraction</span>
+    <span onclick="location.href='food.html'">Food</span>
+  </div> 
+ </div>
+
+
+  <!-- 이미지 컨테이너 -->
+  <div class="container">
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="유적지1.webp" alt="이미지1">
+        <div class="overlay-text">판테온(Pantheon)은 로마에 있는 고대 로마 시대의 건축물로, 원래 모든 신들을 기리기 위해 지어진 사원입니다.</div>
+      </div>
+      <div class="image-item">
+        <img src="유적지2.webp" alt="이미지2">
+        <div class="overlay-text">포로 로마노(Forum Romanum)는 고대 로마의 정치, 상업, 종교, 사법 활동의 중심지였던 광장입니다.</div>
+      </div>
+      <div class="image-item">
+        <img src="유적지3.png" alt="이미지3">
+        <div class="overlay-text">피렌체 대성당(Cattedrale di Santa Maria del Fiore)은 이탈리아 피렌체의 중심에 있는 대표적 고딕·르네상스 양식 성당으로, 돔 설계로 유명합니다.</div>
+      </div>
+      <div class="image-item">
+        <img src="유적지4.jpg" alt="이미지4">
+        <div class="overlay-text">콜로세움(Colosseum)은 고대 로마 시대에 지어진 원형 경기장으로, 검투사 경기와 각종 공개 행사, 연극, 모의 해전 등이 열리던 역사적 건축물입니다.
+</div>
+      </div>
+      <div class="image-item">
+        <img src="유적지5.jpg" alt="이미지5">
+        <div class="overlay-text">성 베드로 대성당(Basilica di San Pietro)은 바티칸 시국에 있는 세계에서 가장 유명한 가톨릭 성당 중 하나이자, 로마 가톨릭 교회의 중심 성당입니다.</div>
+      </div>
+      <div class="image-item">
+        <img src="유적지6.webp" alt="이미지6">
+        <div class="overlay-text">트레비 분수(Fontana di Trevi)는 이탈리아 로마에 있는 유명한 바로크 양식 분수로, 로마의 오래된 수도교인 아쿠아 벤디아(Acqua Vergine)에서 물을 끌어와 18세기에 완성되었습니다.</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const items = document.querySelectorAll('.image-item');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      items.forEach(i => i.classList.remove('selected')); // 이전 선택 해제
+      item.classList.add('selected'); // 클릭한 이미지 선택
+    });
+  });
+
+</script>
+
+
+
+</body>
+</html>

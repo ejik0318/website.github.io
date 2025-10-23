@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, initial-scale=1.0">
+  <style>
+    /* ===== 기본 설정 ===== */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 1920px;
+      min-height: 2000px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== 상단 바 ===== */
+    .topbar {
+      width: 100%;
+      height: 100px;
+      background-color: #ff2020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar span {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .topbar span:hover {
+      color: #14812d;
+    }
+
+    /* ===== 선택 섹션 ===== */
+    .selector-section {
+      margin-top: 150px;
+      text-align: center;
+    }
+
+    .selector-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    select, button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin: 5px;
+    }
+
+    button {
+      background-color: #0b4e11;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d23d1f;
+    }
+
+    /* ===== 결과 영역 ===== */
+    .result {
+      margin-top: 60px;
+      width: 80%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .item img {
+      width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .desc {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- 상단 바 -->
+    <div class="topbar">
+      <span onclick="location.href='index.html'">
+        <img src="국기.png" alt="국기" style="width:50px; height:50px; border-radius:50%;">
+      </span>
+      <span onclick="location.href='history.html'">History</span>
+      <span onclick="location.href='Artifacts.html'">Artifacts</span>
+      <span onclick="location.href='opera.html'">Opera</span>
+      <span onclick="location.href='Tourist.html'">Tourist attraction</span>
+      <span onclick="location.href='food.html'">Food</span>
+    </div>
+
+    <!-- 선택 섹션 -->
+    <div class="selector-section">
+      <h2>지역을 선택하고 관광지를 추천 받아보세요!</h2>
+      <select id="topicSelect">
+        <option value="">-- 선택하세요 --</option>
+        <option value="밀라노">밀라노</option>
+        <option value="로마">로마</option>
+        <option value="피렌체">피렌체</option>
+        <option value="베네치아">베네치아</option>
+      </select>
+      <button onclick="showContent()">확인</button>
+    </div>
+
+    <!-- 결과 영역 -->
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function showContent() {
+      const topic = document.getElementById("topicSelect").value;
+      const result = document.getElementById("result");
+      result.innerHTML = ""; // 초기화
+
+      let content = "";
+
+      if (topic === "밀라노") {
+        content = `
+          <div class="item">
+            <img src="투어리스트1.jpg" alt="밀라노">
+            <div class="desc">밀라노 두오모 대성당 (Duomo di Milano) </div>
+       
+
+           <p> 소개: 고딕 양식으로 지어진 세계에서 세 번째로 큰 규모의 성당이자, 밀라노의 상징입니다. 무려 500년이라는 긴 시간에 걸쳐 완성되었습니다.</p>
+             <p> 특징: 화려하고 정교한 외관과 압도적인 규모가 보는 이를 감탄하게 합니다. 성당 내부도 아름답지만, 엘리베이터나 계단을 이용해 옥상 테라스에 오르면 밀라노 시내 전경을 한눈에 담을 수 있고, 맑은 날에는 알프스까지 보입니다.</p>
+               <p> 위치: 두오모 광장(Piazza del Duomo).</p>
+
+
+          <div class="item">
+            <img src="비토리오.webp" alt="밀라노">
+            <div class="desc">비토리오 에마누엘레 2세 갤러리아 (Galleria Vittorio Emanuele II) </div>
+         
+
+            <p> 소개: 두오모 광장과 스칼라 극장을 잇는 아케이드 형식의 쇼핑몰로, 19세기 말에 완공되었습니다.</p>
+<p> 특징: 아름다운 유리 돔 천장과 화려한 모자이크 바닥이 특징입니다. 명품 브랜드 매장, 고급 레스토랑, 카페들이 있어 쇼핑과 휴식을 동시에 즐기기에 좋습니다.</p>
+<p>방문 팁: 바닥에 있는 황소 모자이크 위를 발뒤꿈치로 밟고 한 바퀴 돌면 행운이 온다는 전설이 있습니다. </p>
+
+          <div class="item">
+            <img src="스포르차.webp" alt="밀라노">
+            <div class="desc">스포르차 성 (Castello Sforzesco)</div>
+     
+          <p> 소개: 15세기 밀라노 공작이었던 프란체스코 스포르차가 지은 거대한 성채입니다. 현재는 여러 박물관과 전시관으로 활용되고 있습니다.</p>
+          <p>특징: 견고한 성벽과 웅장한 내부를 둘러보며 밀라노의 역사를 느낄 수 있습니다. 특히 미켈란젤로의 유작인 '론다니니의 피에타'가 소장되어 있어 예술 애호가들에게 좋은 볼거리입니다. </p>
+          <p>위치: 두오모 광장에서 도보로 약 10분 거리.  </p>
+
+
+          
+        `;
+      } else if (topic === "로마") {
+        content = `
+          <div class="item">
+            <img src="콜로세움.jpg" alt="로마">
+            <div class="desc"> 콜로세움 (Colosseum)</div>
+
+            <p>소개: 고대 로마 시대에 지어진 거대한 원형 경기장으로, 검투사들의 격투가 벌어졌던 곳입니다. 정식 명칭은 플라비우스 원형 경기장이며, 80년에 티투스 황제 때 완공되었습니다.</p>
+          <p>특징: 5만~8만 명의 관중을 수용할 수 있었던 거대한 규모를 자랑하며, 약 2,000년간 로마의 상징으로 자리하고 있습니다.</p>
+ <p>방문 팁: 콜로세움은 포로 로마노, 팔라티노 언덕과 통합 입장권으로 방문하는 경우가 많습니다. 내부를 꼼꼼히 둘러보려면 가이드 투어를 예약하는 것이 좋습니다. </p>
+            
+          </div>
+          <div class="item">
+            <img src="포로.webp" alt="로마">
+            <div class="desc"> 포로 로마노 (Foro Romano)</div>
+     
+    <p>소개: 고대 로마 제국의 정치, 경제, 종교의 중심지였던 광장과 유적지입니다. '로마인의 광장'이라는 뜻을 가지고 있으며, 이 곳을 중심으로 로마 도심이 발전했습니다.
+</p>
+    <p>특징: 개선문, 신전, 정부 청사 등 2,000년 전의 웅장한 유적들이 남아 있어 당시 로마인들의 생활을 엿볼 수 있습니다</p>
+     <p>방문 팁: 콜로세움과 가까워서 함께 둘러보기 좋습니다. 넓은 지역을 천천히 걸으며 고대 로마의 분위기를 느껴보세요</p>
+
+
+          <div class="item">
+            <img src="바티칸.webp" alt="로마">
+            <div class="desc">바티칸 시국 (Vatican City)</div>
+  <p> 소개: 로마 시내에 위치한 세계에서 가장 작은 독립 국가이자, 전 세계 가톨릭교회의 총본산입니다.</p>
+    <p> 특징: 미켈란젤로의 <천지창조>가 있는 시스티나 성당, 웅장한 성 베드로 대성당, 그리고 수많은 예술 작품을 소장한 바티칸 박물관이 있습니다.</p>
+      <p> 방문 팁: 입장권은 사전 예매가 필수이며, 박물관 관람에만 최소 3~4시간 이상 소요되므로 충분한 시간을 확보해야 합니다.</p>
+          </div>
+        `;
+      } else if (topic === "피렌체") {
+        content = `
+          <div class="item">
+            <img src="두오모.jpg" alt="피렌체">
+            <div class="desc">두오모 대성당 (Cattedrale di Santa Maria del Fiore)</div>
+         <p> 소개: 피렌체의 상징인 붉은 돔 지붕의 웅장한 대성당으로, 브루넬레스키가 설계한 거대한 돔과 조토가 설계한 종탑, 그리고 세례당으로 구성되어 있습니다.</p>
+          <p> 특징: 쿠폴라(돔)에 올라가면 피렌체 시내를 한눈에 내려다볼 수 있는 멋진 풍경을 감상할 수 있습니다.</p>
+           <p>방문 팁: 입장권은 사전 예매가 필수이며, 쿠폴라에 오르려면 463개의 계단을 올라야 합니다.  </p>
+
+
+          <div class="item">
+            <img src="미켈란젤로.webp" alt="피렌체">
+            <div class="desc">미켈란젤로 광장 (Piazzale Michelangelo)</div>
+         <p>소개: 피렌체의 아름다운 전경과 일몰을 감상하기에 가장 좋은 장소입니다.</p>
+            <p>특징: 광장 중앙에는 미켈란젤로의 걸작 '다비드'의 청동 복제품이 서 있습니다.</p>
+   <p>방문 팁: 도심에서 조금 떨어져 있지만, 버스(12번)를 타거나 도보로 이동할 수 있습니다. 노을 지는 시간에 맞춰 방문하면 환상적인 풍경을 만끽할 수 있습니다. 
+</p>
+
+
+          <div class="item">
+            <img src="우피치.jpg" alt="피렌체">
+            <div class="desc">우피치 미술관 (Galleria degli Uffizi)</div>
+             <p>소개: 르네상스 시대 예술의 정수를 감상할 수 있는 세계적인 미술관입니다.</p>
+             <p>특징: 보티첼리의 '비너스의 탄생', 레오나르도 다빈치, 미켈란젤로, 라파엘로 등의 작품들을 소장하고 있습니다.</p>
+    <p>방문 팁: 성수기에는 긴 줄을 서야 하므로 온라인 사전 예약을 추천하며, 오디오 가이드를 활용하면 작품을 더 깊이 이해할 수 있습니다. 
+</p>
+    
+        `;
+      } else if (topic === "베네치아") {
+        content = `
+          <div class="item">
+            <img src="산마르코.webp" alt="베네치아">
+            <div class="desc">산마르코 광장 (Piazza San Marco) </div>
+        <p>소개: '유럽의 응접실'이라 불릴 만큼 아름다운 광장으로, 베네치아의 정치적, 종교적 중심지 역할을 해왔습니다.</p>
+    <p>특징: 광장을 둘러싸고 있는 산마르코 대성당, 두칼레 궁전, 산마르코 종탑 등 역사적인 건물들 덕분에 항상 활기가 넘칩니다. 비가 오면 물이 차올라 환상적인 분위기를 연출하기도 합니다.</p>
+    <p>방문 팁: 저녁에는 광장의 유서 깊은 카페에서 라이브 음악을 즐기며 낭만적인 시간을 보낼 수 있습니다.</p>
+
+
+
+
+          <div class="item">
+            <img src="산마르코2.jpg" alt="피렌체">
+            <div class="desc"> 산마르코 대성당 (Basilica di San Marco)</div>
+        <p>소개: 산마르코 광장에 위치한 베네치아의 대표적인 성당으로, 화려한 동굴형 인테리어와 수많은 모자이크가 특징입니다.</p>
+        <p>특징: 성 마르코의 유해가 안치된 곳으로, 동서양의 건축 양식이 혼합된 독특한 아름다움을 자랑합니다.</p>
+        <p>방문 팁: 성당 내부에 입장하려면 긴 줄을 서야 할 수 있으니, 온라인으로 미리 티켓을 예매하는 것이 좋습니다. 
+</p>
+
+
+          <div class="item">
+            <img src="두칼레.jpg" alt="피렌체">
+            <div class="desc">두칼레 궁전 (Palazzo Ducale)과 탄식의 다리 (Ponte dei Sospiri) </div>
+     <p>소개: 두칼레 궁전은 1,100년간 베네치아 공화국 총독의 관저였으며, 현재는 박물관으로 사용됩니다. 궁전과 감옥을 잇는 작은 다리가 바로 탄식의 다리입니다.</p>
+     <p>특징: 탄식의 다리는 죄수들이 감옥으로 끌려가며 베네치아의 아름다운 모습을 마지막으로 보고 탄식했다는 이야기가 전해져 붙여진 이름입니다.</p>
+     <p>방문 팁: 궁전 내부를 둘러보며 총독의 방과 재판실 등을 볼 수 있으며, 탄식의 다리 내부를 직접 건너볼 수도 있습니다. 
+</p>
+
+        `;
+      } else {
+        content = `<div class="desc">주제를 선택해주세요.</div>`;
+      }
+
+      result.innerHTML = content;
+    }
+  </script>
+</body>
+</html>

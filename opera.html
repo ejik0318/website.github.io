@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, initial-scale=1.0">
+ 
+  <style>
+    /* 기본 설정 */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      /* 가로 스크롤 방지 */
+    }
+
+    /* 전체 페이지 */
+    .page {
+      width: 1920px;
+      min-height: 1500px;
+      margin: 0 auto;
+      background-color: #211d1d;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 상단 바 */
+    .topbar {
+      width: 100%;
+      height: 100px;
+      background-color: #ff2020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar span {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .topbar span:hover {
+      color: #14812d;
+    }
+
+    /* 이미지 섹션 */
+    .IMG-section {
+      position: relative;
+      width: 1920px;
+      height: 1000px;
+    }
+
+    .IMG-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 이미지 위 버튼 */
+    .overlay-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 60px;
+      background: linear-gradient(135deg, #ff4d4d, #ff6666);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 28px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    /* 버튼 호버 시 효과 */
+    .overlay-btn:hover {
+      background: linear-gradient(135deg, #ff7373, #ff4040);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 12px 30px rgba(255, 0, 0, 0.5);
+    }
+
+    /* 표 섹션 */
+    .table-section {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .table-section h1,
+    .table-section h2 {
+      margin: 20px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    /* 이미지 행 */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .image-row img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 추가 콘텐츠 */
+    .extra-section {
+      width: 1920px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      color: #444;
+      height: 1900px;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- 상단 바 -->
+  <div class="topbar">
+
+       
+        <span onclick="location.href='index.html'" style="cursor:pointer;">
+      <img src="국기.png" alt="국기" style="width:50px; height:50px; vertical-align:middle; border-radius:50%;">
+    </span>
+    <span onclick="location.href='food.html'">History</span>
+    <span onclick="location.href='Artifacts.html'">Artifacts</span>
+    <span onclick="location.href='opera.html'">Opera</span>
+    <span onclick="location.href='Tourist.html'">Tourist attraction</span>
+    <span onclick="location.href='food.html'">Food</span>
+    
+    
+  </div>
+
+        <style>
+            .IMG-section {
+                position: relative; /* 자식 버튼 절대 위치 기준 */
+                width: 100%;
+                max-width: 1920px;
+            }
+
+            .IMG-section img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 10px;
+            }
+
+            /* 버튼 스타일 */
+            .img-button {
+                position: absolute;
+                bottom: 30px;   /* 이미지 하단에서 위로 30px */
+                right: 30px;    /* 이미지 오른쪽에서 안쪽으로 30px */
+                padding: 12px 25px;
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                background: linear-gradient(45deg, #ff4d4d, #56f26e);
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                transition: all 0.3s ease;
+            }
+
+            /* 마우스 오버 시 */
+            .img-button:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            }
+        </style>
+
+
+
+  <h2 style="color: #ffffff;">오페라를 들으며 감상해보세요!</h2>
+
+<div style="text-align: center; margin-top: 50px;">
+  <audio controls>
+    <source src="오페라미디어.mp4" type="audio/mpeg">
+
+  </audio>
+
+
+<div class="image-grid">
+  <!-- 상단 3개 이미지 -->
+  <div class="row">
+    <div class="image-item">
+      <img src="밀라노 오페라.webp" alt="이미지1">
+      <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+  밀라노 - 라 스칼라 극장 (Teatro alla Scala)
+</p>
+<p style="color: rgb(255, 255, 255);">
+  세계 5대 오페라 극장 중 하나로 손꼽히며, 1778년에 개관했습니다.
+</p>
+<p style="color: rgb(255, 255, 255);">
+  화려한 내부와 뛰어난 음향 시설로 유명하며, 주세페 베르디,
+</p>
+<p style="color: rgb(255, 255, 255);">
+  루치아노 파바로티 등 수많은 거장이 이곳 무대에 섰습니다.
+</p>
+
+          
+
+
+
+    </div>
+    <div class="image-item">
+      <img src="베네치아오페라.webp" alt="이미지2">
+             <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+ 베네치아 - 라 페니체 극장 (Teatro La Fenice)
+</p>
+<p style="color: rgb(255, 255, 255);">
+  1792년에 문을 열었으며, 화재로 소실된 후 19세기 양식으로 재건축되었습니다
+</p>
+<p style="color: rgb(255, 255, 255);">
+  '불사조'라는 뜻의 이름처럼 여러 차례의 화재를 딛고
+</p>
+<p style="color: rgb(255, 255, 255);">
+  화려하게 부활한 역사를 가지고 있습니다.
+</p>
+
+
+    </div>
+    <div class="image-item">
+      <img src="로마오페라.jpeg" alt="이미지3">
+                     <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+로마 - 로마 오페라 극장 (Teatro dell'Opera di Roma)
+</p>
+<p style="color: rgb(255, 255, 255);">
+1880년에 개관한 유서 깊은 극장으로, 1,600석 이상의 좌석을 갖추고 있습니다.
+</p>
+<p style="color: rgb(255, 255, 255);">
+ 오페라, 발레 등 다양한 공연을 선보입니다.
+</p>
+
+    </div>
+  </div>
+  
+  <!-- 하단 3개 이미지 -->
+  <div class="row">
+    <div class="image-item">
+      <img src="나폴리.jpg" alt="이미지4">
+                <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+나폴리 - 산 카를로 극장 (Teatro di San Carlo)
+</p>
+<p style="color: rgb(255, 255, 255);">
+1737년에 설립된 유럽에서 가장 오래된 현역 오페라 극장입니다.
+</p>
+<p style="color: rgb(255, 255, 255);">
+  왕족의 후원으로 지어졌으며, 웅장하고 아름다운 건축물로 유명합니다.
+</p>
+
+ </div>
+
+
+    <div class="image-item">
+      <img src="베로나오페라.jpg" alt="이미지5">
+                <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+베로나 - 아레나 디 베로나 (Arena di Verona)
+</p>
+<p style="color: rgb(255, 255, 255);">
+로마 시대에 지어진 거대한 원형 경기장에서 매년 여름 야외 오페라 축제가 열립니다.
+</p>
+<p style="color: rgb(255, 255, 255);">
+2만 명이 넘는 관객을 수용할 수 있으며, 이탈리아를 대표하는 야외 오페라 축제입니다.
+</p>
+    </div>
+
+
+    <div class="image-item">
+      <img src="팔레르모.webp" alt="이미지6">
+                      <p style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+팔레르모 - 마시모 오페라 극장 (Teatro Massimo)
+</p>
+<p style="color: rgb(255, 255, 255);">
+1897년에 개관한 이탈리아 최대 규모의 오페라 극장입니다.
+</p>
+<p style="color: rgb(255, 255, 255);">
+신고전주의 양식의 화려한 건축물이 특징입니다.
+</p>
+
+    </div>
+
+
+<style>
+.image-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 전체 중앙 정렬 */
+  gap: 150px; /* 상단과 하단 행 간 간격 */
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* 행 내 이미지 중앙 정렬 */
+  gap: 50px; /* 이미지 사이 간격 */
+}
+
+.image-item {
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.image-item img {
+  width: 400px; /* 이미지 크기 */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.image-item p {
+  margin-top: 10px; /* 이미지와 텍스트 사이 간격 */
+  font-size: 16px;
+  color: #333;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+

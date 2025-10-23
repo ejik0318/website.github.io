@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, initial-scale=1.0">
+ 
+  <style>
+    /* 기본 설정 */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      /* 가로 스크롤 방지 */
+    }
+
+    /* 전체 페이지 */
+    .page {
+      width: 1920px;
+      min-height: 5000px;
+      margin: 0 auto;
+      background-color: #010101;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 상단 바 */
+    .topbar {
+      width: 100%;
+      height: 100px;
+      background-color: #ff2020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar span {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .topbar span:hover {
+      color: #14812d;
+    }
+
+    /* 이미지 섹션 */
+    .IMG-section {
+      position: relative;
+      width: 1920px;
+      height: 1000px;
+    }
+
+    .IMG-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 이미지 위 버튼 */
+    .overlay-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 60px;
+      background: linear-gradient(135deg, #ff4d4d, #ff6666);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 28px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    /* 버튼 호버 시 효과 */
+    .overlay-btn:hover {
+      background: linear-gradient(135deg, #ff7373, #ff4040);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 12px 30px rgba(255, 0, 0, 0.5);
+    }
+
+    /* 표 섹션 */
+    .table-section {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .table-section h1,
+    .table-section h2 {
+      margin: 20px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    /* 이미지 행 */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .image-row img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 추가 콘텐츠 */
+    .extra-section {
+      width: 1920px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      color: #444;
+      height: 1900px;
+    }
+  </style>
+</head>
+
+<body>
+
+            <!-- 상단 바 -->
+  <div class="topbar">
+    
+       
+        <span onclick="location.href='index.html'" style="cursor:pointer;">
+      <img src="국기.png" alt="국기" style="width:50px; height:50px; vertical-align:middle; border-radius:50%;">
+    </span>
+    <span onclick="location.href='history.html'">History</span>
+    <span onclick="location.href='Artifacts.html'">Artifacts</span>
+    <span onclick="location.href='opera.html'">Opera</span>
+    <span onclick="location.href='Tourist.html'">Tourist attraction</span>
+    <span onclick="location.href='food.html'">Food</span>
+  </div>
+    </div>
+
+<h1 style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고대 이탈리아 (기원전 8세기 ~ 서기 5세기)</h1>
+
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로마 건국과 왕정: 기원전 753년 로물루스와 레무스 신화와 함께 로마가 건국되었다고 전해지며, 7명의 왕이 통치하는 왕정 시대가 시작되었습니다
+</p>
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+로마 공화정: 기원전 509년 왕정이 폐지되고 귀족 중심의 공화정이 수립되었습니다. 3차례의 포에니 전쟁에서 승리하며 지중해의 패권을 장악했습니다
+</p>
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+로마 제정: 율리우스 카이사르와 옥타비아누스를 거쳐 황제 중심의 제정 시대로 전환되었습니다. '팍스 로마나'로 불리는 전성기를 맞았으나, 이후 군인 황제 시대의 혼란을 겪었습니다.
+</p>
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+제국 분열과 멸망: 395년 테오도시우스 황제 사후 동로마와 서로마로 분열되었습니다. 476년 게르만 용병대장에 의해 서로마 제국이 멸망하며 고대 시대가 막을 내렸습니다
+</p>
+
+<h1 style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;중세 이탈리아 (서기 5세기 ~ 14세기)</h1>
+
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+분열과 혼란: 서로마 제국 멸망 후 이탈리아는 동고트 왕국, 비잔티움 제국, 롬바르드족 등 여러 세력의 지배를 받으며 정치적 분열과 혼란이 지속되었습니다.
+</p>
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+신성 로마 제국과 교황령: 프랑크 왕국의 샤를마뉴 대제가 신성 로마 황제로 즉위하면서 이탈리아 북부는 신성 로마 제국의 영향권에 놓였습니다. 한편, 교황이 통치하는 교황령이 이탈리아 중부에 자리 잡았습니다.
+</p>
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+신성 로마 제국과 교황령: 프랑크 왕국의 샤를마뉴 대제가 신성 로마 황제로 즉위하면서 이탈리아 북부는 신성 로마 제국의 영향권에 놓였습니다. 한편, 교황이 통치하는 교황령이 이탈리아 중부에 자리 잡았습니다.
+</p>
+    
+
+<h1 style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   르네상스와 근대 이탈리아 (14세기 ~ 19세기)</h1>
+
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+르네상스 개화: 14세기 피렌체에서 르네상스가 시작되어 이탈리아 전역으로 확산되었습니다. 고대 그리스·로마 문화의 부활을 통해 인간 중심의 새로운 예술과 학문이 꽃을 피웠습니다.
+</p>
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+외세의 간섭: 르네상스 이후 이탈리아는 오스트리아, 스페인, 프랑스 등 외세의 침략과 간섭을 받으며 여러 작은 왕국과 공국으로 분열된 상태가 이어졌습니다.
+</p>
+
+    <p style="color: rgb(255, 255, 255);">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;  
+이탈리아 통일: 19세기 중엽, 민족주의 운동인 '리소르지멘토'가 일어났습니다. 사르데냐 왕국을 중심으로 가리발디, 카보우르 등 영웅들의 활약 끝에 1861년 이탈리아 왕국이 수립되었습니다. 1870년 로마를 점령하면서 통일이 완성되었습니다
+</p>
+
+
+<h1 style="color: #ff1e1e; margin-top: 300px; text-align: center; ">
+ 이탈리아 역사에 대해 더 알고 싶으신가요?
+</h1>
+<h3 style="color: #1bb65b; margin-top:50px; text-align: center;">
+ 3가지의 역사 책을 추천합니다.
+</h3>
+
+<div class="image-row">
+  <img src="책1.jpg" alt="이미지1">
+  <img src="책2.jpg" alt="이미지2">
+ <img src="책3.jpg" alt="이미지3">
+ 
+</div>
+
+<h1 style="color: #000000; margin-top: 68px; text-align: center;">
+  여행자 후기
+</h1><h1 style="color: #000000; margin-top: 68px; text-align: center;">
+  여행자 후기
+</h1>
+
+
+    
+
+
+    
+
+
+
+
+
